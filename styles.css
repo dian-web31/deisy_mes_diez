@@ -1,0 +1,179 @@
+/* Styles from buttom */ 
+.btn-class-name {
+    --primary: 255, 90, 120;
+    --secondary: 150, 50, 60;
+    width: 60px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    outline: 10px solid rgb(var(--primary), .5);
+    border-radius: 100%;
+    position: relative;
+    transition: .3s;
+  }
+  
+  .btn-class-name .back {
+    background: rgb(var(--secondary));
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .btn-class-name .front {
+    background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+    box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+    border-radius: 100%;
+    position: absolute;
+    border: 1px solid rgb(var(--secondary));
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: inherit;
+    transform: translateY(-15%);
+    transition: .15s;
+    color: rgb(var(--secondary));
+  }
+  
+  .btn-class-name:active .front {
+    transform: translateY(0%);
+    box-shadow: 0 0;
+  }
+
+/* Styles for pages */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    background: linear-gradient(to bottom, #ff90b2, #ffcce0);
+}
+
+.container{
+    display: grid;
+    place-items: center;
+    height: 100%;
+    
+}
+
+/* Styles for tittle */
+h1 {
+    font-family: "Prompt", sans-serif;
+    font-weight: 800;
+    font-size: 12vw;
+    line-height: 0.85;
+    text-align: center;
+    margin: 0;
+    animation: Move 2s linear infinite;
+}
+
+@supports (-webkit-background-clip: text) {
+    h1 {
+        background: linear-gradient(to bottom, rgb(0 0 255), rgb(255 0 255));
+        background: linear-gradient(4deg, #548cff 10%, #f900bf 90%);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        --shadow-size: 0.08em;
+        padding: var(--shadow-size) 0 0 var(--shadow-size);
+        text-shadow: calc(-1 * var(--shadow-size)) calc(-1 * var(--shadow-size)) #fff;
+
+    }
+}
+
+@keyframes Move {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(30px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+/* Styles for text */
+.letter {
+    position: relative;
+    font-family: "Prompt", sans-serif;
+    top:20px;
+    color: white;
+    display:inline-block;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 0 #b7b7b7, 0 2px 0 #b7b7b7, 0 3px 0 #b7b7b7, 0 4px 0 #b7b7b7, 
+        0 5px 0 #b7b7b7, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent,
+        0 10px 10px rgb(0, 0, 0.5);
+    animation: bounce 0.4s ease infinite alternate;
+}
+
+p span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+p span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+p span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+p span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+p span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+p span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+p span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+p span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+p span:nth-child(10) {
+    animation-delay: 0.9s;
+}
+
+@keyframes bounce {
+    100% {
+        top: -20px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc,
+        0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 
+        0 8px 0 #ccc, 0 9px 0 #ccc, 0 60px 30px rgba(0,0,0,0.3);
+    }
+}
+  /*filter: drop-shadow(0 0 10px rgba(0,0,0,.8))*/
+
+  video {
+    max-width: 90%; /* El video ocupará como máximo el 90% del ancho de la página */
+    max-height: 70vh; /* El video ocupará como máximo el 70% de la altura de la ventana */
+    border: 2px solid #ff90b3; /* (Opcional) Agrega un borde decorativo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* (Opcional) Sombra para el video */
+    margin: 20px auto; /* Centra el video con margen */
+    display: block; /* Asegúrate de que se comporte como un bloque centrado */
+}
